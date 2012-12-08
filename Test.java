@@ -19,7 +19,7 @@ public class Test {
         
         /**
          * Erstellen Sie eine Menge von Bauernhoefen mit jeweils einigen Traktoren
-         * – wirklich eine Menge von Bauernhoefen (eine Form von Collection), 
+         * - wirklich eine Menge von Bauernhoefen (eine Form von Collection), 
          * nicht nur eine Ansammlung einzelner Variablen. Jeder Bauernhof in 
          * der Menge soll ueber seinen eindeutigen Namen angesprochen werden, 
          * und jeder Traktor eines Bauernhofes ueber seine eindeutige Nummer. 
