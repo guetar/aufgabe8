@@ -22,6 +22,6 @@ public class GasTractor extends Tractor {
     @Author(name = "Stefan Resch")
     //VB: amount soll Double sein
     public void IncreaseConsumption(Number amount) {
-        consumedGas += (Double) amount;
+        consumedGas += amount.doubleValue();
     }
 }

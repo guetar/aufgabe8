@@ -12,7 +12,7 @@ public abstract class Tractor extends Node {
     private int hoursInUse;
     
     public Tractor(int nr) {
-        super("tractor_" + nr);
+        super("" + nr);
         this.nr = nr;
         this.hoursInUse = 0;
     }

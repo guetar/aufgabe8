@@ -11,7 +11,7 @@ public class Farm extends Node {
     private Set tractors;
     
     public Farm(String name) {
-        super("farm_" + name);
+        super(name);
         this.name = name;
         this.tractors = new Set();
     }
@@ -26,7 +26,14 @@ public class Farm extends Node {
         return tractors;
     }
     
-    @Author(name = "Günther Bernsteiner")
+    //rekursive Suche nach dem Traktor mit der angegebenen Nummer
+    //NB: returns den gesuchten Traktor oder null,wenn kein Knoten mit der 
+    //angegebenen id existiert
+    public Tractor getTractor(int nr){
+    return (Tractor) tractors.getNode(String.valueOf(nr));
+    }
+    
+    @Author(name = "Günther Bernsteiner")    
     public void insertTractor(Tractor b) {
         tractors.insert(b);
     }

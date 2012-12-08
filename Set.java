@@ -15,12 +15,16 @@ public class Set implements Iterable {
         return new Iterator(head);
     }
 
+    //NB: fuegt nur ein, wenn noch kein Knoten mit der selben ID vorhanden ist.
     @Author(name = "Stefan Resch")
     public void insert(Node n) {
         if (head == null) {
             head = n;
         } else {
-            head.insert(n);
+            Node help = getNode(n.getId());
+            if (help == null) {
+                head.insert(n);
+            }
         }
     }
     
