@@ -9,7 +9,7 @@ public class Farm extends Node {
     private Set tractors;
     
     public Farm(String name) {
-        super("farm_" + name);
+        super(name);
         this.name = name;
         this.tractors = new Set();
     }

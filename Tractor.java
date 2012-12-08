@@ -9,7 +9,7 @@ public abstract class Tractor extends Node {
     private Tool tool;
     
     public Tractor(int nr) {
-        super("tractor_" + nr);
+        super("" + nr);
         this.nr = nr;
     }
     

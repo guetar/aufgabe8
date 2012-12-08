@@ -18,6 +18,6 @@ public class DieselTractor extends Tractor {
     @Override
     //VB: amount soll Integer sein
     public void raiseConsumption(Number amount) {
-        consumedFuel += (Integer) amount;
+        consumedFuel += amount.intValue();
     }
 }

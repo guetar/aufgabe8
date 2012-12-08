@@ -18,6 +18,6 @@ public class GasTractor extends Tractor {
     @Override
     //VB: amount soll Double sein
     public void raiseConsumption(Number amount) {
-        consumedGas += (Double) amount;
+        consumedGas += amount.doubleValue();
     }
 }
