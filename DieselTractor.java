@@ -2,6 +2,9 @@
  *
  * @author steff
  */
+
+@Author(name = "Stefan Resch")
+
 public class DieselTractor extends Tractor {
     
     private int consumedFuel; 
@@ -11,13 +14,15 @@ public class DieselTractor extends Tractor {
     }
     
     @Override
+    @Author(name = "Stefan Resch")
     public Integer getConsumption() {
         return consumedFuel;
     }
 
     @Override
+    @Author(name = "Stefan Resch")
     //VB: amount soll Integer sein
-    public void raiseConsumption(Number amount) {
-        consumedFuel += amount.intValue();
+    public void IncreaseConsumption(Number amount) {
+        consumedFuel += (Integer) amount;
     }
 }

@@ -2,6 +2,9 @@
  *
  * @author steff
  */
+
+@Author(name = "Stefan Resch")
+
 public class GasTractor extends Tractor {
 
     private double consumedGas; 
@@ -11,13 +14,15 @@ public class GasTractor extends Tractor {
     }
     
     @Override
+    @Author(name = "Stefan Resch")
     public Double getConsumption() {
         return consumedGas;
     }
 
     @Override
+    @Author(name = "Stefan Resch")
     //VB: amount soll Double sein
-    public void raiseConsumption(Number amount) {
-        consumedGas += amount.doubleValue();
+    public void IncreaseConsumption(Number amount) {
+        consumedGas += (Double) amount;
     }
 }

@@ -30,10 +30,12 @@ public abstract class Tractor extends Node {
         return tool.getCapacity();
     }
     
+    @Author(name = "Stefan Resch")
     public void increaseHours(int hours) {
         hoursInUse += hours;
     }
     
+    @Author(name = "Stefan Resch")
     public int getHours() {
         return hoursInUse;
     }

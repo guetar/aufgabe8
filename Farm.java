@@ -49,6 +49,7 @@ public class Farm extends Node {
         
     }
     
+    @Author(name = "Stefan Resch")
     public int getAverageHours() {
         Iterator it = tractors.iterator();
         int avg = 0;
