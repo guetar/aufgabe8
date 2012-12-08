@@ -33,4 +33,16 @@ public class Farm extends Node {
     public void changeTractor() {
         
     }
+    
+    public int getAverageHours() {
+        Iterator it = tractors.iterator();
+        int avg = 0;
+        
+        while(it.hasNext()) {
+            Node n = it.next();
+            //if (n instanceof )
+        }
+        
+        return 0;
+    }
 }
