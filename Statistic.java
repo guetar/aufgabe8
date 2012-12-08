@@ -151,6 +151,29 @@ public class Statistic {
         return result;
     }
     
-    
-    
+    /**
+     * Die minimale und maximale Anzahl an Säscharen insgesamt und aufgeschlüsselt 
+     * nach Art des Traktors (Dieseltraktor oder Biogastraktor). 
+     */
+    public String getMinMaxDrill() {
+        String result = "";
+        
+        int min = Integer.MAX_VALUE;
+        int max;
+        
+        while(it.hasNext()) {
+            Node n = it.next();
+            
+            if (n instanceof Tractor) {
+                Tractor tractor = (Tractor) n;
+                Tool tool = tractor.getTool();
+                
+                if(tool instanceof Drill) {
+                    //int cap = tool.getCapacity();
+                }
+            }
+        }
+        
+        return result;
+    }
 }

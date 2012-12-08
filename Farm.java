@@ -49,15 +49,26 @@ public class Farm extends Node {
     }
     
     @Author(name = "Stefan Resch")
-    public int getAverageHours() {
-        Iterator it = tractors.iterator();
-        int avg = 0;
-        
-        while(it.hasNext()) {
-            Node n = it.next();
-            //if (n instanceof )
-        }
-        
-        return 0;
+    public String hoursForTools() {
+       Statistic stat = new Statistic(tractors.iterator());
+       return stat.hoursForTools();
+    }
+    
+    @Author(name = "Stefan Resch")
+    public String hoursForTractors() {
+       Statistic stat = new Statistic(tractors.iterator());
+       return stat.hoursForTractors();
+    }
+    
+    @Author(name = "Stefan Resch")
+    public String ConsumptionForDieselTractors() {
+       Statistic stat = new Statistic(tractors.iterator());
+       return stat.ConsumptionForDieselTractors();
+    }
+    
+    @Author(name = "Stefan Resch")
+    public String ConsumptionForGasTractors() {
+       Statistic stat = new Statistic(tractors.iterator());
+       return stat.ConsumptionForGasTractors();
     }
 }
