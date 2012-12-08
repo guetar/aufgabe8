@@ -21,6 +21,23 @@ public abstract class Node {
             next.setPrev(this);
         }
     }
+    
+    public void remove(Node n) {
+        if(this != n) {
+            if(next != null) next.remove(n);
+        } else {
+            if (next != null && prev != null) {
+                next.setPrev(prev);
+                prev.setNext(next);
+            }
+            else if(next != null && prev == null) {
+                next.setPrev(null);
+            }
+            else if(next == null) {
+                prev.setNext(null);
+            }
+        }
+    }
   
     public boolean hasNext() {
         return (next != null);

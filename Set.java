@@ -21,8 +21,9 @@ public class Set implements Iterable {
     }
     
     public void remove(Node n) {
-        if (head != null) {
-            
+        if (head == null) {
+            return;
         }
+        head.remove(n);
     }
 }
