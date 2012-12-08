@@ -23,7 +23,8 @@ public class Test {
          * nicht nur eine Ansammlung einzelner Variablen. Jeder Bauernhof in 
          * der Menge soll ueber seinen eindeutigen Namen angesprochen werden, 
          * und jeder Traktor eines Bauernhofes ueber seine eindeutige Nummer. 
-         * */
+         **/
+        
         Set farms = new Set();
         
         Farm meidlingerhof = new Farm("Meidlingerhof");
@@ -75,6 +76,10 @@ public class Test {
             Tractor t = (Tractor) i.next();
             System.out.println("Traktor Nr. "+t.getNr()+", Consumtion: "+t.getConsumption()+", Tool Capacity: "+t.getToolCapacity());
         }
+
+        /**
+         * Listet alle Klassen, deren Verfasser, sowie die darin enthaltenen Methoden inklusive deren Verfassern
+         */
         
         List<Class> classes = new ArrayList<Class>();
         ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
@@ -94,7 +99,7 @@ public class Test {
         } catch (ClassNotFoundException ex) {
             System.out.println(ex.getMessage());
         }
-
+        
         for(Class c : classes) {
             if(c.isAnnotationPresent(Author.class)) {
                 System.out.println("---------------------------------------------------");

@@ -1,7 +1,10 @@
+
 /**
  *
  * @author steff
  */
+
+@Author(name = "Stefan Resch")
 public class Statistic {
     /**
      * Diese Klasse erstellt ein "Statistikobjekt", dem beim durchiterieren eines
@@ -15,7 +18,7 @@ public class Statistic {
         this.it = it;
     }
     
-    
+    @Author(name = "Stefan Resch")
     public String hoursForTools() {
         String result = "";
         
@@ -50,7 +53,7 @@ public class Statistic {
         return result;
     }
     
-    
+    @Author(name = "Stefan Resch")
     public String hoursForTractors() {
         String result = "";
         
@@ -84,6 +87,7 @@ public class Statistic {
         return result;
     }
     
+    @Author(name = "Stefan Resch")
     public String ConsumptionForDieselTractors() {
         String result = "";
         
@@ -117,6 +121,7 @@ public class Statistic {
         return result;
     }
     
+    @Author(name = "Stefan Resch")
     public String ConsumptionForGasTractors() {
         String result = "";
         
@@ -150,7 +155,4 @@ public class Statistic {
         
         return result;
     }
-    
-    
-    
 }
