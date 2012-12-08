@@ -18,6 +18,7 @@ public abstract class Node {
         this.prev = null;
     }
 
+    @Author(name = "Stefan Resch")
     public void insert(Node n) {
         if (next != null) {
             next.insert(n);
@@ -27,10 +28,12 @@ public abstract class Node {
         }
     }
     
+    @Author(name = "Stefan Resch")
     public String getId() {
         return id;
     }
     
+    @Author(name = "Stefan Resch")
     public void remove(String id) {
         if(!this.getId().equals(id)) {
             if(next != null) next.remove(id);
@@ -51,6 +54,7 @@ public abstract class Node {
     //rekursive Suche nach Knoten mit der angegebenen id
     //NB: returns den gesuchten Knoten oder null,wenn kein Knoten mit der 
     //angegebenen id existiert
+    @Author(name = "Matthias Vigele")
     public Node find(Node n, String id) {
         if (!n.getId().equals(id)) {
             if (n.next != null) {
@@ -63,22 +67,27 @@ public abstract class Node {
         }
     }
   
+    @Author(name = "Stefan Resch")
     public boolean hasNext() {
         return (next != null);
     }
-        
+      
+    @Author(name = "Stefan Resch")  
     public void setNext(Node nextN) {
         next = nextN;
     }
     
+    @Author(name = "Stefan Resch")
     public Node getNext() {
         return next;
     }
 
+    @Author(name = "Stefan Resch")
     public void setPrev(Node prevN) {
         prev = prevN;
     }
 
+    @Author(name = "Stefan Resch")
     public Node getPrev() {
         return prev;
     }

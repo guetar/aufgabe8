@@ -14,11 +14,13 @@ public class Iterator implements java.util.Iterator {
     }
 
     @Override
+    @Author(name = "Stefan Resch")
     public boolean hasNext() {
         return pos!= null;
     }
 
     @Override
+    @Author(name = "Stefan Resch")
     public Node next() {
         if (hasNext()) {
             Node tmp = pos;
@@ -29,6 +31,7 @@ public class Iterator implements java.util.Iterator {
     }
 
     @Override
+    @Author(name = "Stefan Resch")
     public void remove() {
         if (pos != null) {
             Node next = pos.getNext();
