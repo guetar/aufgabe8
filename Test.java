@@ -1,18 +1,13 @@
 
+import java.lang.reflect.Method;
+
+
 /**
  *
  * @author guetar
  */
 
-@ClassPreamble (
-   author = "John Doe",
-   date = "3/17/2002",
-   currentRevision = 6,
-   lastModified = "4/12/2004",
-   lastModifiedBy = "Jane Doe",
-   // Note array notation
-   reviewers = {"Alice", "Bob", "Cindy"}
-)
+@Author(name = "Günther Bernsteiner")
 
 public class Test {
     
@@ -45,6 +40,14 @@ public class Test {
         while(i.hasNext()) {
             Tractor t = (Tractor) i.next();
             System.out.println(t.getNr());
+        }
+        
+        Method[] methods = Farm.class.getMethods();
+        for (Method m : methods) {
+            if (m.isAnnotationPresent(Author.class)) {
+                Author a = m.getAnnotation(Author.class);
+                System.out.println("Methode: " + m.getName());
+            }
         }
     }
 }

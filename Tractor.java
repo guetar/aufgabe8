@@ -3,6 +3,9 @@
  *
  * @author guetar
  */
+
+@Author(name = "Günther Bernsteiner")
+
 public abstract class Tractor extends Node {
     
     private final int nr;
@@ -29,7 +32,7 @@ public abstract class Tractor extends Node {
     
     public abstract int getAmount();
     public abstract int raiseAmount();
-    public abstract void changeTool(Tool t);
+    
     public void changeTool(Tool t) {
         tool = t;
     }

@@ -1,7 +1,11 @@
+
 /**
  *
  * @author steff
  */
+
+@Author(name = "Stefan Resch")
+
 public class Iterator implements java.util.Iterator {
     protected Node pos;
     
