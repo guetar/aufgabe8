@@ -4,7 +4,7 @@
  */
 public class Fertilizer extends Tool {
     
-    private int capacity;
+    private double capacity;
     
     public Fertilizer(int capacity) {
         this.capacity = capacity;
@@ -18,7 +18,7 @@ public class Fertilizer extends Tool {
     private void seed() {}
     
     @Override
-    public int getCapacity() {
+    public Double getCapacity() {
         return capacity;
     }
 }
