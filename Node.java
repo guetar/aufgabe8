@@ -1,8 +1,11 @@
 
 /**
  *
- * @author guetar
+ * @author steff
  */
+
+@Author(name = "Stefan Resch")
+
 public abstract class Node {
 
     private final String id;

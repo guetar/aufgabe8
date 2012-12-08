@@ -1,8 +1,14 @@
 
+import java.lang.reflect.Method;
+
+
 /**
  *
  * @author guetar
  */
+
+@Author(name = "Günther Bernsteiner")
+
 public class Test {
     
     public static void main(String[] args) {

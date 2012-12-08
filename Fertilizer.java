@@ -1,7 +1,11 @@
+
 /**
  *
- * @author guetar
+ * @author mattV
  */
+
+@Author(name = "Matthias Vigele")
+
 public class Fertilizer extends Tool {
     
     private double capacity;

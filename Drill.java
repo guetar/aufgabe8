@@ -1,7 +1,11 @@
+
 /**
  *
- * @author guetar
+ * @author mattV
  */
+
+@Author(name = "Matthias Vigele")
+
 public class Drill extends Tool {
 
     private int capacity;
