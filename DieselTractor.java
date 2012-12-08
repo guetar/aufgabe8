@@ -23,6 +23,6 @@ public class DieselTractor extends Tractor {
     @Author(name = "Stefan Resch")
     //VB: amount soll Integer sein
     public void IncreaseConsumption(Number amount) {
-        consumedFuel += (Integer) amount;
+        consumedFuel += amount.intValue();
     }
 }

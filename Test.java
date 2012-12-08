@@ -50,8 +50,8 @@ public class Test {
         
         System.out.println("Traktor Nr. 2 und 3 veraendern:");
         
-       ((Farm) bauernhoefe.getNode("Meidlingerhof")).getTractor(2).raiseConsumption(5.3);    
-       ((Farm) bauernhoefe.getNode("Meidlingerhof")).getTractor(3).raiseConsumption(2.5); 
+       ((Farm) bauernhoefe.getNode("Meidlingerhof")).getTractor(2).IncreaseConsumption(5.3);    
+       ((Farm) bauernhoefe.getNode("Meidlingerhof")).getTractor(3).IncreaseConsumption(2.5); 
         i = tractors.iterator();
         while(i.hasNext()) {
             Tractor t = (Tractor) i.next();
