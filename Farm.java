@@ -5,7 +5,6 @@
  */
 
 @Author(name = "Günther Bernsteiner")
-
 public class Farm extends Node {
     
     private final String name;

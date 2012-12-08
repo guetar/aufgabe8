@@ -5,7 +5,6 @@
  */
 
 @Author(name = "Günther Bernsteiner")
-
 public abstract class Tractor extends Node {
     
     private final int nr;

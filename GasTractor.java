@@ -4,7 +4,6 @@
  */
 
 @Author(name = "Stefan Resch")
-
 public class GasTractor extends Tractor {
 
     private double consumedGas; 

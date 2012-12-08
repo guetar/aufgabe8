@@ -5,7 +5,6 @@
  */
 
 @Author(name = "Stefan Resch")
-
 public class Set implements Iterable {
 
     private Node head;

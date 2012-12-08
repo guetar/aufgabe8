@@ -5,7 +5,6 @@
  */
 
 @Author(name = "Günther Bernsteiner")
-
 public class Drill extends Tool {
 
     private int capacity;

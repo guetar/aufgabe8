@@ -1,12 +1,13 @@
 
 import java.io.File;
 import java.io.IOException;
+import java.lang.annotation.Annotation;
 import java.lang.reflect.Method;
+import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Enumeration;
 import java.util.List;
-
 
 /**
  *
@@ -14,7 +15,6 @@ import java.util.List;
  */
 
 @Author(name = "Günther Bernsteiner")
-
 public class Test {
     
     public static void main(String[] args) {
@@ -56,20 +56,42 @@ public class Test {
             System.out.println(t.getNr());
         }
         
+        List<Class> classes = new ArrayList<Class>();
+        ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
+        URL url = classLoader.getResource(".");
+        
         try {
-            Class[] classes = getClasses(".");
-            System.out.println("blah: " + classes[0].toString());
-            Method[] methods = Farm.class.getMethods();
-            for (Method m : methods) {
-                if (m.isAnnotationPresent(Author.class)) {
-                    Author a = m.getAnnotation(Author.class);
-                    System.out.println("Method " + m.getName() + " created by " + a.name());
+            File root = new File(url.toURI());
+
+            File[] files = root.listFiles();
+            for (File file : files) {
+                if (!file.isDirectory() && !file.getName().equals("<error>.class") && file.getName().endsWith(".class")) {
+                    classes.add(Class.forName(file.getName().substring(0, file.getName().length() - 6)));
                 }
             }
-        } catch(IOException e) {
-            System.out.println(e.getMessage());
-        } catch(ClassNotFoundException e) {
-            System.out.println(e.getMessage());
+        } catch (URISyntaxException ex) {
+            System.out.println(ex.getMessage());
+        } catch (ClassNotFoundException ex) {
+            System.out.println(ex.getMessage());
+        }
+
+        for(Class c : classes) {
+            if(c.isAnnotationPresent(Author.class)) {
+                System.out.println("---------------------------------------------------");
+                Annotation[] anths = c.getAnnotations();
+                for(Annotation anth : anths) {
+                    Author a = (Author) anth;
+                    System.out.println("Class " + c.getName() + " created by " + a.name());
+                }
+                System.out.println("---------------------------------------------------");
+                Method[] methods = c.getMethods();
+                for (Method m : methods) {
+                    if (m.isAnnotationPresent(Author.class)) {
+                        Author a = m.getAnnotation(Author.class);
+                        System.out.println("Method " + m.getName() + " created by " + a.name());
+                    }
+                }
+            }
         }
     }
     
@@ -126,5 +148,6 @@ public class Test {
         }
         return classes;
     }
+
 
 }

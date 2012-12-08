@@ -5,7 +5,6 @@
  */
 
 @Author(name = "Günther Bernsteiner")
-
 public class Fertilizer extends Tool {
     
     private double capacity;

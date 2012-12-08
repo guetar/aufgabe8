@@ -4,7 +4,6 @@
  */
 
 @Author(name = "Stefan Resch")
-
 public class DieselTractor extends Tractor {
     
     private int consumedFuel; 
