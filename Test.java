@@ -1,12 +1,10 @@
 
 import java.io.File;
-import java.io.IOException;
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Method;
 import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.ArrayList;
-import java.util.Enumeration;
 import java.util.List;
 
 /**
@@ -26,15 +24,15 @@ public class Test {
          * der Menge soll ueber seinen eindeutigen Namen angesprochen werden, 
          * und jeder Traktor eines Bauernhofes ueber seine eindeutige Nummer. 
          * */
-        Set bauernhoefe = new Set();
+        Set farms = new Set();
         
         Farm meidlingerhof = new Farm("Meidlingerhof");
         Farm hofbraeuhaus = new Farm("Hofbraeuhaus");
         Farm hintergruabn = new Farm("Hintergruabn");
         
-        bauernhoefe.insert(meidlingerhof);
-        bauernhoefe.insert(hofbraeuhaus);
-        bauernhoefe.insert(hintergruabn);   
+        farms.insert(meidlingerhof);
+        farms.insert(hofbraeuhaus);
+        farms.insert(hintergruabn);   
         
         /**
          * Fuegen Sie zu einigen Bauernhöfen einzelne Traktoren hinzu, entfernen 
@@ -43,13 +41,13 @@ public class Test {
          * und Namen ansprechen.
          */
         
-        ((Farm) bauernhoefe.getNode("Meidlingerhof")).insertTractor(new DieselTractor(1));
-        ((Farm) bauernhoefe.getNode("Meidlingerhof")).insertTractor(new GasTractor(2));
-        ((Farm) bauernhoefe.getNode("Meidlingerhof")).insertTractor(new DieselTractor(3));
+        ((Farm) farms.getNode("Meidlingerhof")).insertTractor(new DieselTractor(1));
+        ((Farm) farms.getNode("Meidlingerhof")).insertTractor(new GasTractor(2));
+        ((Farm) farms.getNode("Meidlingerhof")).insertTractor(new DieselTractor(3));
         
-        ((Farm) bauernhoefe.getNode("Meidlingerhof")).getTractor(1).changeTool(new Drill(3));
-        ((Farm) bauernhoefe.getNode("Meidlingerhof")).getTractor(2).changeTool(new Drill(56));
-        ((Farm) bauernhoefe.getNode("Meidlingerhof")).getTractor(3).changeTool(new Fertilizer(32));
+        ((Farm) farms.getNode("Meidlingerhof")).getTractor(1).changeTool(new Drill(3));
+        ((Farm) farms.getNode("Meidlingerhof")).getTractor(2).changeTool(new Drill(56));
+        ((Farm) farms.getNode("Meidlingerhof")).getTractor(3).changeTool(new Fertilizer(32));
           
         Set tractors = meidlingerhof.getTractors();
         Iterator i = tractors.iterator();
@@ -60,8 +58,8 @@ public class Test {
         
         System.out.println("Traktor Nr. 2 und 3 veraendern:");
         
-       ((Farm) bauernhoefe.getNode("Meidlingerhof")).getTractor(2).IncreaseConsumption(5.3);    
-       ((Farm) bauernhoefe.getNode("Meidlingerhof")).getTractor(3).IncreaseConsumption(2.5); 
+       ((Farm) farms.getNode("Meidlingerhof")).getTractor(2).IncreaseConsumption(5.3);    
+       ((Farm) farms.getNode("Meidlingerhof")).getTractor(3).IncreaseConsumption(2.5); 
         i = tractors.iterator();
         while(i.hasNext()) {
             Tractor t = (Tractor) i.next();
@@ -116,35 +114,4 @@ public class Test {
             }
         }
     }
-    
-    /**
-     * Scans all classes accessible from the context class loader which belong
-     * to the given package and subpackages.
-     *
-     * @param packageName The base package
-     * @return The classes
-     * @throws ClassNotFoundException
-     * @throws IOException
-     */
-    private static Class[] getClasses(String packageName)
-            throws ClassNotFoundException, IOException {
-        ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
-        assert classLoader != null;
-        String path = packageName.replace('.', '/');
-        Enumeration<URL> resources = classLoader.getResources(path);
-        List<File> dirs = new ArrayList<File>();
-        while (resources.hasMoreElements()) {
-            URL resource = resources.nextElement();
-            dirs.add(new File(resource.getFile()));
-        }
-        ArrayList<Class> classes = new ArrayList<Class>();
-        for (File directory : dirs) {
-            classes.addAll(findClasses(directory, packageName));
-        }
-        return classes.toArray(new Class[classes.size()]);
-    }
-
-    }
-
-
 }
