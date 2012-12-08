@@ -3,7 +3,7 @@
  *
  * @author guetar
  */
-public class Traktor extends Node {
+public abstract class Traktor extends Node {
     
     private final int nr;
     
@@ -15,4 +15,7 @@ public class Traktor extends Node {
     public int getNr() {
         return nr;
     }
+    
+    public abstract int getAmount();
+    public abstract int raiseAmount();
 }
