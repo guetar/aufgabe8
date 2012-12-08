@@ -3,7 +3,7 @@
  *
  * @author guetar
  */
-public class Traktor extends Node {
+public abstract class Traktor extends Node {
     
     private final int nr;
     
