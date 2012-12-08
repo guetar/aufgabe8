@@ -6,6 +6,14 @@
 public class Test {
     
     public static void main(String[] args) {
+        
+        /**
+         * Erstellen Sie eine Menge von Bauernhoefen mit jeweils einigen Traktoren
+         * – wirklich eine Menge von Bauernhoefen (eine Form von Collection), 
+         * nicht nur eine Ansammlung einzelner Variablen. Jeder Bauernhof in 
+         * der Menge soll ueber seinen eindeutigen Namen angesprochen werden, 
+         * und jeder Traktor eines Bauernhofes ueber seine eindeutige Nummer. 
+         * */
         Set bauernhoefe = new Set();
         
         Farm meidlingerhof = new Farm("Meidlingerhof");
@@ -35,5 +43,7 @@ public class Test {
             Tractor t = (Tractor) i.next();
             System.out.println(t.getNr());
         }
+        
+
     }
 }

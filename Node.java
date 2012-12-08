@@ -44,6 +44,21 @@ public abstract class Node {
             }
         }
     }
+    
+    //rekursive Suche nach Knoten mit der angegebenen id
+    //NB: returns den gesuchten Knoten oder null,wenn kein Knoten mit der 
+    //angegebenen id existiert
+    public Node find(Node n, String id) {
+        if (!n.getId().equals(id)) {
+            if (n.next != null) {
+                return find(n.next, id);
+            } else {
+                return null;
+            }
+        } else {
+            return n;
+        }
+    }
   
     public boolean hasNext() {
         return (next != null);
