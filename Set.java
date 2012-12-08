@@ -26,4 +26,11 @@ public class Set implements Iterable {
         }
         head.remove(id);
     }
+    
+    //rekursive Suche nach Knoten mit der angegebenen id
+    //NB: returns den gesuchten Knoten oder null,wenn kein Knoten mit der 
+    //angegebenen id existiert
+    public Node getNode(String id){
+        return head.find(head, id);
+    }
 }
