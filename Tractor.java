@@ -27,7 +27,10 @@ public abstract class Tractor extends Node {
         tool = t;
     }
     
-    @Author(name = "Stefan Resch")
+    public Tool getTool() {
+        return tool;
+    }
+    
     public Number getToolCapacity() {
         return tool.getCapacity();
     }
