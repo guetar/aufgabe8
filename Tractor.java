@@ -25,6 +25,10 @@ public abstract class Tractor extends Node {
         tool = t;
     }
     
+    public Tool getTool() {
+        return tool;
+    }
+    
     public Number getToolCapacity() {
         return tool.getCapacity();
     }
