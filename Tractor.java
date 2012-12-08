@@ -11,6 +11,7 @@ public abstract class Tractor extends Node {
     private final int nr;
     private int hours;
     private Tool tool;
+    private int hoursInUse;
     
     public Tractor(int nr) {
         super("tractor_" + nr);
@@ -41,6 +42,14 @@ public abstract class Tractor extends Node {
         return tool.getCapacity();
     }
     
+    public void increaseHours(int hours) {
+        hoursInUse += hours;
+    }
+    
+    public int getHours() {
+        return hoursInUse;
+    }
+    
     public abstract Number getConsumption();
-    public abstract void raiseConsumption(Number amount);
+    public abstract void IncreaseConsumption(Number amount);
 }
