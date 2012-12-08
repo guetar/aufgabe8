@@ -29,6 +29,7 @@ public class Farm extends Node {
     //rekursive Suche nach dem Traktor mit der angegebenen Nummer
     //NB: returns den gesuchten Traktor oder null,wenn kein Knoten mit der 
     //angegebenen id existiert
+    @Author(name = "Matthias Vigele")    
     public Tractor getTractor(int nr){
     return (Tractor) tractors.getNode(String.valueOf(nr));
     }
