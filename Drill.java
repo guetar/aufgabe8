@@ -18,7 +18,7 @@ public class Drill extends Tool {
     private void drill() {}
     
     @Override
-    public int getCapacity() {
+    public Integer getCapacity() {
         return capacity;
     }
 }

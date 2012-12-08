@@ -2,18 +2,22 @@
  *
  * @author steff
  */
-public class Dieseltraktor extends Traktor {
+public class DieselTractor extends Tractor {
     
-    public 
-
+    private int consumedFuel; 
+    
+    public DieselTractor(int nr) {
+        super(nr);
+    }
+    
     @Override
-    public int getAmount() {
-        throw new UnsupportedOperationException("Not supported yet.");
+    public Integer getConsumption() {
+        return consumedFuel;
     }
 
     @Override
-    public int raiseAmount() {
-        throw new UnsupportedOperationException("Not supported yet.");
+    //VB: amount soll Integer sein
+    public void raiseConsumption(Number amount) {
+        consumedFuel += (Integer) amount;
     }
-    
 }
