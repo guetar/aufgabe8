@@ -4,7 +4,7 @@
  * @author guetar
  */
 
-@Author(name = "Günther Bernsteiner")
+@Author(name = "Stefan Resch")
 public abstract class Tractor extends Node {
     
     private final int nr;
@@ -17,14 +17,17 @@ public abstract class Tractor extends Node {
         this.hoursInUse = 0;
     }
     
+    @Author(name = "Stefan Resch")
     public int getNr() {
         return nr;
     }
     
+    @Author(name = "Stefan Resch")
     public void changeTool(Tool t) {
         tool = t;
     }
     
+    @Author(name = "Stefan Resch")
     public Number getToolCapacity() {
         return tool.getCapacity();
     }
