@@ -34,6 +34,7 @@ public class Farm extends Node {
     return (Tractor) tractors.getNode(String.valueOf(nr));
     }
     
+    @Author(name = "Günther Bernsteiner")    
     public void insertTractor(Tractor b) {
         tractors.insert(b);
     }
