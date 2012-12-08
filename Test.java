@@ -40,12 +40,16 @@ public class Test {
         ((Farm) bauernhoefe.getNode("Meidlingerhof")).insertTractor(new DieselTractor(1));
         ((Farm) bauernhoefe.getNode("Meidlingerhof")).insertTractor(new GasTractor(2));
         ((Farm) bauernhoefe.getNode("Meidlingerhof")).insertTractor(new DieselTractor(3));
+        
+        ((Farm) bauernhoefe.getNode("Meidlingerhof")).getTractor(1).changeTool(new Drill(3));
+        ((Farm) bauernhoefe.getNode("Meidlingerhof")).getTractor(2).changeTool(new Drill(56));
+        ((Farm) bauernhoefe.getNode("Meidlingerhof")).getTractor(3).changeTool(new Fertilizer(32));
           
         Set tractors = meidlingerhof.getTractors();
         Iterator i = tractors.iterator();
         while(i.hasNext()) {
             Tractor t = (Tractor) i.next();
-            System.out.println("Traktor Nr. "+t.getNr()+", Consumtion: "+t.getConsumption());
+            System.out.println("Traktor Nr. "+t.getNr()+", Consumtion: "+t.getConsumption()+", Tool Capacity: "+t.getToolCapacity());
         }
         
         System.out.println("Traktor Nr. 2 und 3 veraendern:");
@@ -55,7 +59,7 @@ public class Test {
         i = tractors.iterator();
         while(i.hasNext()) {
             Tractor t = (Tractor) i.next();
-            System.out.println("Traktor Nr. "+t.getNr()+", Consumtion: "+t.getConsumption());
+            System.out.println("Traktor Nr. "+t.getNr()+", Consumtion: "+t.getConsumption()+", Tool Capacity: "+t.getToolCapacity());
         }        
         
         System.out.println("Traktor Nr. 3 entfernen:");
@@ -65,7 +69,7 @@ public class Test {
         i = tractors.iterator();
         while(i.hasNext()) {
             Tractor t = (Tractor) i.next();
-            System.out.println("Traktor Nr. "+t.getNr()+", Consumtion: "+t.getConsumption());
+            System.out.println("Traktor Nr. "+t.getNr()+", Consumtion: "+t.getConsumption()+", Tool Capacity: "+t.getToolCapacity());
         }
         
         /**
