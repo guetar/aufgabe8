@@ -21,7 +21,10 @@ public class Set implements Iterable {
         if (head == null) {
             head = n;
         } else {
-            head.insert(n);
+            Node help = getNode(n.getId());
+            if (help == null) {
+                head.insert(n);
+            }
         }
     }
     
