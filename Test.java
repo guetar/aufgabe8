@@ -12,7 +12,7 @@ import java.util.List;
  * @author guetar
  */
 
-@Author(name = "Günther Bernsteiner")
+@Author(name = "Guenther Bernsteiner")
 public class Test {
     
     public static void main(String[] args) {
@@ -36,9 +36,9 @@ public class Test {
         farms.insert(hintergruabn);   
         
         /**
-         * Fuegen Sie zu einigen Bauernhöfen einzelne Traktoren hinzu, entfernen 
+         * Fuegen Sie zu einigen Bauernhoefen einzelne Traktoren hinzu, entfernen 
          * Sie einzelne Traktoren, und aendern Sie die Informationen zu einzelnen 
-         * Traktoren, wobei Sie Traktoren und Bauernhoefe nur über deren Nummern 
+         * Traktoren, wobei Sie Traktoren und Bauernhoefe nur ueber deren Nummern 
          * und Namen ansprechen.
          */
         
@@ -76,6 +76,19 @@ public class Test {
             Tractor t = (Tractor) i.next();
             System.out.println("Traktor Nr. "+t.getNr()+", Consumtion: "+t.getConsumption()+", Tool Capacity: "+t.getToolCapacity());
         }
+        
+//        System.out.println("Consumption for dieseltractors: ");
+//        System.out.println(((Farm) farms.getNode("Meidlingerhof")).ConsumptionForDieselTractors());
+//        
+//        System.out.println("Consumption for gastractors: ");
+//        System.out.println(((Farm) farms.getNode("Meidlingerhof")).ConsumptionForGasTractors());
+//        
+//        System.out.println("Working hours for tools: ");
+//        System.out.println(((Farm) farms.getNode("Meidlingerhof")).hoursForTools());
+//        
+//        System.out.println("Working hours for tractors: ");
+//        System.out.println(((Farm) farms.getNode("Meidlingerhof")).hoursForTractors());
+        
 
         /**
          * Listet alle Klassen, deren Verfasser, sowie die darin enthaltenen Methoden inklusive deren Verfassern

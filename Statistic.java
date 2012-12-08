@@ -111,12 +111,12 @@ public class Statistic {
             }
         }
         
-        int drillAvg = drillConsumption / drillCount;
-        int fertAvg = fertConsumption / fertCount;
-        int totalAvg = (drillConsumption + fertConsumption) / (drillCount + fertCount);
+        int drillAvg = (drillCount != 0) ? drillConsumption / drillCount : 0;
+        int fertAvg = (fertCount != 0) ? fertConsumption / fertCount : 0;
+        int totalAvg = (drillCount + fertCount != 0) ? (drillConsumption + fertConsumption) / (drillCount + fertCount) : 0;
         
         result += "Average Consumption of all Dieseltractors: " + totalAvg + "\n";
-        result += "Average Consumption of all Dieseltractors: with drilling machines" + drillAvg + "\n";
+        result += "Average Consumption of all Dieseltractors with drilling machines: " + drillAvg + "\n";
         result += "Average Consumption of all Dieseltractors with fertilizers: " + fertAvg + "\n";
         return result;
     }
@@ -150,14 +150,14 @@ public class Statistic {
         double totalAvg = (drillConsumption + fertConsumption) / (drillCount + fertCount);
         
         result += "Average Consumption of all Dieseltractors: " + totalAvg + "\n";
-        result += "Average Consumption of all Dieseltractors: with drilling machines" + drillAvg + "\n";
+        result += "Average Consumption of all Dieseltractors with drilling machines: " + drillAvg + "\n";
         result += "Average Consumption of all Dieseltractors with fertilizers: " + fertAvg + "\n";
         
         return result;
     }
     
     /**
-     * Die minimale und maximale Anzahl an Säscharen insgesamt und aufgeschlüsselt 
+     * Die minimale und maximale Anzahl an Saescharen insgesamt und aufgeschluesselt 
      * nach Art des Traktors (Dieseltraktor oder Biogastraktor). 
      */
     public String getMinMaxDrill() {

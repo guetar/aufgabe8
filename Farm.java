@@ -4,7 +4,7 @@
  * @author guetar
  */
 
-@Author(name = "Günther Bernsteiner")
+@Author(name = "Guenther Bernsteiner")
 public class Farm extends Node {
     
     private final String name;
@@ -16,12 +16,12 @@ public class Farm extends Node {
         this.tractors = new Set();
     }
     
-    @Author(name = "Günther Bernsteiner")
+    @Author(name = "Guenther Bernsteiner")
     public String getName() {
         return name;
     }
     
-    @Author(name = "Günther Bernsteiner")
+    @Author(name = "Guenther Bernsteiner")
     public Set getTractors() {
         return tractors;
     }
@@ -34,17 +34,17 @@ public class Farm extends Node {
     return (Tractor) tractors.getNode(String.valueOf(nr));
     }
     
-    @Author(name = "Günther Bernsteiner")    
+    @Author(name = "Guenther Bernsteiner")    
     public void insertTractor(Tractor b) {
         tractors.insert(b);
     }
     
-    @Author(name = "Günther Bernsteiner")
+    @Author(name = "Guenther Bernsteiner")
     public void removeTractor(String id) {
         tractors.remove(id);
     }
     
-    @Author(name = "Günther Bernsteiner")
+    @Author(name = "Guenther Bernsteiner")
     public void changeTractor() {
         
     }

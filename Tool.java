@@ -4,11 +4,11 @@
  * @author guetar
  */
 
-@Author(name = "Günther Bernsteiner")
+@Author(name = "Guenther Bernsteiner")
 public abstract class Tool {
     
-    @Author(name = "Günther Bernsteiner")
+    @Author(name = "Guenther Bernsteiner")
     public abstract void use();
-    @Author(name = "Günther Bernsteiner")
+    @Author(name = "Guenther Bernsteiner")
     public abstract Number getCapacity();
 }

@@ -4,7 +4,7 @@
  * @author guetar
  */
 
-@Author(name = "Günther Bernsteiner")
+@Author(name = "Guenther Bernsteiner")
 public class Drill extends Tool {
 
     private int capacity;
@@ -14,16 +14,16 @@ public class Drill extends Tool {
     }
     
     @Override
-    @Author(name = "Günther Bernsteiner")
+    @Author(name = "Guenther Bernsteiner")
     public void use() {
         drill();
     }
     
-    @Author(name = "Günther Bernsteiner")
+    @Author(name = "Guenther Bernsteiner")
     private void drill() {}
     
     @Override
-    @Author(name = "Günther Bernsteiner")
+    @Author(name = "Guenther Bernsteiner")
     public Integer getCapacity() {
         return capacity;
     }
