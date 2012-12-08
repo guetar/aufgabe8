@@ -9,6 +9,7 @@ public class Bauernhof extends Node {
     private Set traktoren;
     
     public Bauernhof(String name) {
+        super("bauernhof_" + name);
         this.name = name;
     }
     
@@ -21,6 +22,6 @@ public class Bauernhof extends Node {
     }
     
     public void removeTraktor(Traktor b) {
-        traktoren.remove(b);
+        traktoren.remove(b.getId());
     }
 }

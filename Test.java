@@ -7,10 +7,9 @@ public class Test {
     
     public static void main(String[] args) {
         Set traktoren = new Set();
-        Traktor traktor2 = new Traktor(2);
         traktoren.insert(new Traktor(1));
+        traktoren.insert(new Traktor(2));
         traktoren.insert(new Traktor(3));
-        traktoren.insert(traktor2);
         
         Iterator i = traktoren.iterator();
         while(i.hasNext()) {
@@ -18,7 +17,7 @@ public class Test {
             System.out.println(t.getNr());
         }
         
-        traktoren.remove(traktor2);
+        traktoren.remove("traktor_2");
         
         i = traktoren.iterator();
         while(i.hasNext()) {

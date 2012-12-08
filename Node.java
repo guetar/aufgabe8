@@ -5,12 +5,14 @@
  */
 public abstract class Node {
 
+    private final String id;
     private Node next;
     private Node prev;
 
-    public Node() {
-        next = null;
-        prev = null;
+    public Node(String id) {
+        this.id = id;
+        this.next = null;
+        this.prev = null;
     }
 
     public void insert(Node n) {
@@ -22,9 +24,13 @@ public abstract class Node {
         }
     }
     
-    public void remove(Node n) {
-        if(this != n) {
-            if(next != null) next.remove(n);
+    public String getId() {
+        return id;
+    }
+    
+    public void remove(String id) {
+        if(!this.getId().equals(id)) {
+            if(next != null) next.remove(id);
         } else {
             if (next != null && prev != null) {
                 next.setPrev(prev);

@@ -20,10 +20,10 @@ public class Set implements Iterable {
         }
     }
     
-    public void remove(Node n) {
+    public void remove(String id) {
         if (head == null) {
             return;
         }
-        head.remove(n);
+        head.remove(id);
     }
 }
