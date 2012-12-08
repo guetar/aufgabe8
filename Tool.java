@@ -1,9 +1,9 @@
-
 /**
  *
  * @author guetar
  */
-public class Tool {
-
+public abstract class Tool {
     
+    public abstract void use();
+    public abstract int getCapacity();
 }
