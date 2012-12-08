@@ -113,7 +113,7 @@ public class Test {
             System.out.println(ex.getMessage());
         }
         
-        for(Class c : classes) {
+        for(Class<?> c : classes) {
             if(c.isAnnotationPresent(Author.class)) {
                 System.out.println("---------------------------------------------------");
                 Annotation[] anths = c.getAnnotations();
