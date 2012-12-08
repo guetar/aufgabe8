@@ -3,12 +3,12 @@
  *
  * @author guetar
  */
-public abstract class Traktor extends Node {
+public abstract class Tractor extends Node {
     
     private final int nr;
     
-    public Traktor(int nr) {
-        super("traktor_" + nr);
+    public Tractor(int nr) {
+        super("tractor_" + nr);
         this.nr = nr;
     }
     
@@ -18,4 +18,5 @@ public abstract class Traktor extends Node {
     
     public abstract int getAmount();
     public abstract int raiseAmount();
+    public abstract void changeTool(Tool t);
 }

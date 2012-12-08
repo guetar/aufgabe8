@@ -8,31 +8,31 @@ public class Test {
     public static void main(String[] args) {
         Set bauernhoefe = new Set();
         
-        Bauernhof meidlingerhof = new Bauernhof("Meidlingerhof");
-        Bauernhof hofbraeuhaus = new Bauernhof("Hofbraeuhaus");
-        Bauernhof hintergruabn = new Bauernhof("Hintergruabn");
+        Farm meidlingerhof = new Farm("Meidlingerhof");
+        Farm hofbraeuhaus = new Farm("Hofbraeuhaus");
+        Farm hintergruabn = new Farm("Hintergruabn");
         
         bauernhoefe.insert(meidlingerhof);
         bauernhoefe.insert(hofbraeuhaus);
         bauernhoefe.insert(hintergruabn);
         
-        meidlingerhof.insertTraktor(new Traktor(1));
-        meidlingerhof.insertTraktor(new Traktor(2));
-        meidlingerhof.insertTraktor(new Traktor(3));
+        meidlingerhof.insertTractor(new Tractor(1));
+        meidlingerhof.insertTractor(new Tractor(2));
+        meidlingerhof.insertTractor(new Tractor(3));
         
-        Set traktoren = meidlingerhof.getTraktoren();
-        Iterator i = traktoren.iterator();
+        Set tractors = meidlingerhof.getTractors();
+        Iterator i = tractors.iterator();
         while(i.hasNext()) {
-            Traktor t = (Traktor) i.next();
+            Tractor t = (Tractor) i.next();
             System.out.println(t.getNr());
         }
         
-        meidlingerhof.removeTraktor("traktor_3");
+        meidlingerhof.removeTractor("traktor_3");
         
-        traktoren = meidlingerhof.getTraktoren();
-        i = traktoren.iterator();
+        tractors = meidlingerhof.getTractors();
+        i = tractors.iterator();
         while(i.hasNext()) {
-            Traktor t = (Traktor) i.next();
+            Tractor t = (Tractor) i.next();
             System.out.println(t.getNr());
         }
     }
