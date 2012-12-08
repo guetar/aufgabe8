@@ -3,6 +3,8 @@
  *
  * @author guetar
  */
+
+@Author(name = "Günther Bernsteiner")
 public abstract class Tractor extends Node {
     
     private final int nr;
@@ -10,8 +12,9 @@ public abstract class Tractor extends Node {
     private int hoursInUse;
     
     public Tractor(int nr) {
-        super("tractor_" + nr);
+        super("" + nr);
         this.nr = nr;
+        this.hoursInUse = 0;
     }
     
     public int getNr() {
@@ -30,10 +33,12 @@ public abstract class Tractor extends Node {
         return tool.getCapacity();
     }
     
+    @Author(name = "Stefan Resch")
     public void increaseHours(int hours) {
         hoursInUse += hours;
     }
     
+    @Author(name = "Stefan Resch")
     public int getHours() {
         return hoursInUse;
     }
