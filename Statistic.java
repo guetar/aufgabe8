@@ -176,10 +176,6 @@ public class Statistic {
         return result;
     }
     
-    /**
-     * Die durchschnittliche Fassungskapazität des Düngerbehälters aller Traktoren 
-     * insgesamt und aufgeschlüsselt nach Art des Traktors (Dieseltraktor oder Biogastraktor).
-     */
     @Author(name = "Stefan Resch")
     public String getAverageCapacity(Iterator it) {
         String result = "";
