@@ -11,10 +11,11 @@ public abstract class Tractor extends Node {
     private Tool tool;
     private int hoursInUse;
     
-    public Tractor(int nr) {
+    public Tractor(int nr, Tool tool) {
         super("" + nr);
         this.nr = nr;
         this.hoursInUse = 0;
+        this.tool = tool;
     }
     
     @Author(name = "Stefan Resch")

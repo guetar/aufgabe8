@@ -9,11 +9,13 @@ public class Farm extends Node {
     
     private final String name;
     private Set tractors;
+    private Statistic stat;
     
     public Farm(String name) {
         super(name);
         this.name = name;
         this.tractors = new Set();
+        this.stat = new Statistic();
     }
     
     @Author(name = "Guenther Bernsteiner")
@@ -51,25 +53,31 @@ public class Farm extends Node {
     
     @Author(name = "Stefan Resch")
     public String hoursForTools() {
-       Statistic stat = new Statistic(tractors.iterator());
-       return stat.hoursForTools();
+       return stat.hoursForTools(tractors.iterator());
     }
     
     @Author(name = "Stefan Resch")
     public String hoursForTractors() {
-       Statistic stat = new Statistic(tractors.iterator());
-       return stat.hoursForTractors();
+       return stat.hoursForTractors(tractors.iterator());
     }
     
     @Author(name = "Stefan Resch")
     public String ConsumptionForDieselTractors() {
-       Statistic stat = new Statistic(tractors.iterator());
-       return stat.ConsumptionForDieselTractors();
+       return stat.ConsumptionForDieselTractors(tractors.iterator());
     }
     
     @Author(name = "Stefan Resch")
     public String ConsumptionForGasTractors() {
-       Statistic stat = new Statistic(tractors.iterator());
-       return stat.ConsumptionForGasTractors();
+       return stat.ConsumptionForGasTractors(tractors.iterator());
+    }
+    
+    @Author(name = "Stefan Resch")
+    public String MinMaxDrill() {
+       return stat.getMinMaxDrill(tractors.iterator());
+    }
+    
+    @Author(name = "Stefan Resch")
+    public String averageCapacity() {
+       return stat.getAverageCapacity(tractors.iterator());
     }
 }

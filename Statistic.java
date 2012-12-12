@@ -12,14 +12,9 @@ public class Statistic {
      * in einer Gesamtstatistik erfasst, um diese in einem einheitlichen
      * Statistikobjekt und mit toString einfacher ausgeben zu koennen.
      */
-    private Iterator it;
-    
-    public Statistic(Iterator it) {
-        this.it = it;
-    }
     
     @Author(name = "Stefan Resch")
-    public String hoursForTools() {
+    public String hoursForTools(Iterator it) {
         String result = "";
         
         int drillHours = 0; //drill
@@ -28,24 +23,20 @@ public class Statistic {
         int fertCount = 0;
         
         while(it.hasNext()) {
-            Node n = it.next();
-            
-            if (n instanceof Tractor) {
-                Tractor t = (Tractor) n;
-                
-                if (t.getTool() instanceof Drill) {
-                    drillHours += t.getHours();
-                    drillCount++;
-                } else if (t.getTool() instanceof Fertilizer) {
-                    fertHours += t.getHours();
-                    fertCount++;
-                }
+            Tractor t = (Tractor) it.next();
+
+            if (t.getTool() instanceof Drill) {
+                drillHours += t.getHours();
+                drillCount++;
+            } else if (t.getTool() instanceof Fertilizer) {
+                fertHours += t.getHours();
+                fertCount++;
             }
         }
         
-        int drillAvg = drillHours / drillCount;
-        int fertAvg = fertHours / fertCount;
-        int totalAvg = (drillHours + fertHours) / (drillCount + fertCount);
+        int drillAvg = (drillCount != 0)? drillHours / drillCount : 0;
+        int fertAvg = (fertCount != 0)? fertHours / fertCount : 0;
+        int totalAvg = (drillCount + fertCount != 0)? (drillHours + fertHours) / (drillCount + fertCount) : 0;
         
         result += "Average Hours of all tractors: " + totalAvg + "\n";
         result += "Average Hours of all tractors with drilling machines: " + drillAvg + "\n";
@@ -54,7 +45,7 @@ public class Statistic {
     }
     
     @Author(name = "Stefan Resch")
-    public String hoursForTractors() {
+    public String hoursForTractors(Iterator it) {
         String result = "";
         
         int dieselHours = 0;
@@ -63,32 +54,29 @@ public class Statistic {
         int gasCount = 0;
         
         while(it.hasNext()) {
-            Node n = it.next();
+            Tractor t = (Tractor) it.next();
             
-            if (n instanceof Tractor) {
-                Tractor t = (Tractor) n;
-                if (t instanceof DieselTractor) {
-                    dieselHours += t.getHours();
-                    dieselCount++;
-                } else if (t instanceof GasTractor) {
-                    gasHours += t.getHours();
-                    gasCount++;
-                }
+            if (t instanceof DieselTractor) {
+                dieselHours += t.getHours();
+                dieselCount++;
+            } else if (t instanceof GasTractor) {
+                gasHours += t.getHours();
+                gasCount++;
             }
         }
         
-        int dieselAvg = dieselHours / dieselCount;
-        int gasAvg = gasHours / gasCount;
-        int totalAvg = (dieselHours + gasHours) / (dieselCount + gasCount);
+        int dieselAvg = (dieselCount != 0)? dieselHours / dieselCount : 0;
+        int gasAvg = (gasCount != 0)? gasHours / gasCount : 0;
+        int totalAvg = (dieselCount + gasCount != 0)? (dieselHours + gasHours) / (dieselCount + gasCount) : 0;
         
         result += "Average Hours of all tractors: " + totalAvg + "\n";
-        result += "Average Hours of all Dieseltractors: " + dieselAvg + "\n";
-        result += "Average Hours of all Gastractors: " + gasAvg + "\n";
+        result += "Average Hours of all diesel tractors: " + dieselAvg + "\n";
+        result += "Average Hours of all gas tractors: " + gasAvg + "\n";
         return result;
     }
     
     @Author(name = "Stefan Resch")
-    public String ConsumptionForDieselTractors() {
+    public String ConsumptionForDieselTractors(Iterator it) {
         String result = "";
         
         int drillConsumption = 0;
@@ -115,14 +103,14 @@ public class Statistic {
         int fertAvg = (fertCount != 0) ? fertConsumption / fertCount : 0;
         int totalAvg = (drillCount + fertCount != 0) ? (drillConsumption + fertConsumption) / (drillCount + fertCount) : 0;
         
-        result += "Average Consumption of all Dieseltractors: " + totalAvg + "\n";
-        result += "Average Consumption of all Dieseltractors with drilling machines: " + drillAvg + "\n";
-        result += "Average Consumption of all Dieseltractors with fertilizers: " + fertAvg + "\n";
+        result += "Average Consumption of all dieseltractors: " + totalAvg + "\n";
+        result += "Average Consumption of all diesel tractors with drilling machines: " + drillAvg + "\n";
+        result += "Average Consumption of all diesel tractors with fertilizers: " + fertAvg + "\n";
         return result;
     }
     
     @Author(name = "Stefan Resch")
-    public String ConsumptionForGasTractors() {
+    public String ConsumptionForGasTractors(Iterator it) {
         String result = "";
         
         double drillConsumption = 0;
@@ -145,40 +133,84 @@ public class Statistic {
             }
         }
         
-        double drillAvg = drillConsumption / drillCount;
-        double fertAvg = fertConsumption / fertCount;
-        double totalAvg = (drillConsumption + fertConsumption) / (drillCount + fertCount);
+        double drillAvg = (drillCount != 0)? drillConsumption / drillCount : 0;
+        double fertAvg = (fertCount != 0)? fertConsumption / fertCount : 0;
+        double totalAvg = (drillCount + fertCount != 0)? (drillConsumption + fertConsumption) / (drillCount + fertCount) : 0;
         
-        result += "Average Consumption of all Dieseltractors: " + totalAvg + "\n";
-        result += "Average Consumption of all Dieseltractors with drilling machines: " + drillAvg + "\n";
-        result += "Average Consumption of all Dieseltractors with fertilizers: " + fertAvg + "\n";
+        result += "Average Consumption of all dieseltractors: " + totalAvg + "\n";
+        result += "Average Consumption of all diesel tractors with drilling machines: " + drillAvg + "\n";
+        result += "Average Consumption of all diesel tractors with fertilizers: " + fertAvg + "\n";
         
         return result;
     }
-    
-    /**
-     * Die minimale und maximale Anzahl an Saescharen insgesamt und aufgeschluesselt 
-     * nach Art des Traktors (Dieseltraktor oder Biogastraktor). 
-     */
-    public String getMinMaxDrill() {
+
+    @Author(name = "Stefan Resch")
+    public String getMinMaxDrill(Iterator it) {
         String result = "";
         
         int min = Integer.MAX_VALUE;
-        int max;
+        Tractor tractorMin = null;
+        int max = 0;
+        Tractor tractorMax = null;
         
         while(it.hasNext()) {
-            Node n = it.next();
-            
-            if (n instanceof Tractor) {
-                Tractor tractor = (Tractor) n;
-                Tool tool = tractor.getTool();
-                
-                if(tool instanceof Drill) {
-                    //int cap = tool.getCapacity();
+            Tractor tractor = (Tractor) it.next();
+            Tool tool = tractor.getTool();
+
+            if(tool instanceof Drill) {
+                Drill drill = (Drill) tool;
+                int cap = drill.getCapacity();
+                if (cap < min) {
+                    min = cap;
+                    tractorMin = tractor;
+                }
+                if (cap > max) {
+                    max = cap;
+                    tractorMax = tractor;
                 }
             }
         }
         
+        result += tractorMin + " with the least drills: " + min + "\n";
+        result += tractorMax + " with the most drills: " + max + "\n";
+        return result;
+    }
+    
+    /**
+     * Die durchschnittliche Fassungskapazität des Düngerbehälters aller Traktoren 
+     * insgesamt und aufgeschlüsselt nach Art des Traktors (Dieseltraktor oder Biogastraktor).
+     */
+    @Author(name = "Stefan Resch")
+    public String getAverageCapacity(Iterator it) {
+        String result = "";
+        
+        double dieselCap = 0;
+        int dieselCount = 0;
+        double gasCap = 0;
+        int gasCount = 0;
+        
+        while(it.hasNext()) {
+            Tractor tractor = (Tractor) it.next();
+            Tool tool = tractor.getTool();
+            if (tool instanceof Fertilizer) {
+                Fertilizer fert = (Fertilizer) tool;
+                if (tractor instanceof DieselTractor) {
+                    dieselCap += fert.getCapacity();
+                    dieselCount++;
+                } else if (tractor instanceof GasTractor) {
+                    gasCap += fert.getCapacity();
+                    gasCount++;
+                }
+            }
+        }
+        
+        double avgDieselCap = (dieselCount != 0)? dieselCap / dieselCount : 0;
+        double avgGasCap = (gasCount != 0)? gasCap / gasCount : 0;
+        double avgTotalCap = (dieselCount + gasCount != 0)? (dieselCap + gasCap) / (dieselCount + gasCount) : 0;
+        
+        result += "Average capacities of all tractors: " + avgTotalCap + "\n";
+        result += "Average capacities of all dieseltractors: " + avgDieselCap + "\n";
+        result += "Average capacities of all gastractors: " + avgGasCap + "\n";
         return result;
     }
 }

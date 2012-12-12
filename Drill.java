@@ -27,4 +27,10 @@ public class Drill extends Tool {
     public Integer getCapacity() {
         return capacity;
     }
+    
+    @Override
+    @Author(name = "Guenther Bernsteiner")
+    public String toString() {
+        return "driller";
+    }
 }

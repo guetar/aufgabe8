@@ -43,4 +43,22 @@ public class Set implements Iterable {
     public Node getNode(String id){
         return head.find(head, id);
     }
+    
+    @Author(name= "Stefan Resch")
+    public Farm getFarm(String id) {
+        Node n = head.find(head, id);
+        if (n instanceof Farm) {
+            return (Farm) n;
+        } 
+        return null;
+    }
+    
+    @Author(name= "Stefan Resch")
+    public Tractor getTractor(String id) {
+        Node n = head.find(head, id);
+        if (n instanceof Tractor) {
+            return (Tractor) n;
+        } 
+        return null;
+    }
 }

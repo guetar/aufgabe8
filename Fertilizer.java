@@ -27,4 +27,10 @@ public class Fertilizer extends Tool {
     public Double getCapacity() {
         return capacity;
     }
+    
+    @Override
+    @Author(name = "Guenther Bernsteiner")
+    public String toString() {
+        return "fertilizer";
+    }
 }
